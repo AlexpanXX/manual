@@ -1,5 +1,5 @@
 class Checkpoint < ApplicationRecord
-  belongs_to :user
+  has_one :reference
 
   validates :name, presence: true
 end

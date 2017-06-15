@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
+//= require bootstrap-tagsinput
+//= require atv-img-animation
 //= require material-kit
 //= require material.min
 //= require_tree .

@@ -13,6 +13,7 @@
  *= require_tree .
  *= require font-awesome
  *= require material_icons
+ *= require bootstrap-tagsinput
  *= require_self
  */
  @import "bootstrap-sprockets";
@@ -39,15 +40,15 @@
  // 导航条
  .navbar-info .navbar-brand {
   .logo {
-    font-size: 1.3em;
-    img {
-      margin-top: -5px;
-      margin-right: 10px;
-      width: 24px;
-      height: 24px;
-    }
+    font-weight: 400;
+    font-size: 1.4em;
   }
   color: #FFF;
+}
+// 下拉菜单文字
+.navbar .navbar-nav > li > a {
+  font-size: 1em;
+  letter-spacing: 1px;
 }
  // footer置底代码
  html {
@@ -79,21 +80,17 @@
    border-radius: 6px;
    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
  }
- // 下拉菜单文字
- .navbar .navbar-nav > li > a {
-   font-size: 1em;
-   letter-spacing: 1px;
- }
  //---------Footer---------
  footer {
    position: absolute;
+   z-index: 2;
+   color: #FFF;
    width: 100%;
    bottom: 0;
-   height: 70px;
-   margin-top: -70px;
-   color: #FFF;
+   height: 80px;
+   margin-top: -80px;
    font-size: 1.2em;
-   padding: 22px 0 20px;
+   padding-top: 30px;
    background-color: #03a9f4;
 
    a {

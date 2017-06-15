@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :checkpoints
   end
 
-  root "sections#index"
+  root "welcome#index"
 end

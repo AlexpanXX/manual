@@ -1,0 +1,91 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.landing-page {
+  margin-bottom: 140px;
+
+  .background-blue {
+    background-color: #deeff5 !important;
+  }
+
+  .description,
+  .title {
+    color: #636363;
+    letter-spacing: 3px;
+  }
+
+  .header {
+    background-image: url('https://ws1.sinaimg.cn/large/006tKfTcly1fg2bd499yqj31jk18g7gr.jpg');
+    padding-top: 50px;
+
+    .title {
+      text-shadow: 0 4px 10px #47494c;
+    }
+
+    .slogan {
+      letter-spacing: 2px;
+    }
+
+    a {
+      margin-top: 50px;
+    }
+  }
+
+  .section-head .description {
+    color: #636363;
+    line-height: 35px;
+  }
+
+  .section-head {
+    background-image: url("https://ws1.sinaimg.cn/large/006tKfTcly1fg2e1y440tj304g04g0nx.jpg");
+    background-repeat: repeat;
+    border-radius: 6px 6px 0 0;
+  }
+
+  section {
+    padding-bottom: 100px;
+    background-image: url("https://ws1.sinaimg.cn/large/006tKfTcly1fg2e1y440tj304g04g0nx.jpg");
+    background-repeat: repeat;
+  }
+
+  .section-features {
+    .image-container img {
+      width: 100%;
+    }
+  }
+
+  .section-referrer {
+    background-image: url("https://ws1.sinaimg.cn/large/006tKfTcly1fg2e1y440tj304g04g0nx.jpg");
+    background-repeat: repeat;
+  }
+
+  .referrer h2 {
+    letter-spacing: 3px;
+  }
+
+  .section h2 {
+    color: #0d6186;
+    font-weight: lighter;
+  }
+
+  .section-bottom {
+    width: 100%;
+    background-image: url("https://ws3.sinaimg.cn/large/006tKfTcly1fg2cterovzj31kw0fge7n.jpg");
+    border-radius: 0 0 6px 6px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .title {
+      color: #3ab4ea;
+      text-shadow: 0 4px 10px #b3d9ff;
+      margin-bottom: 0;
+    }
+
+    .description {
+      color: #a2a2a2;
+      margin-bottom: 20px;
+    }
+  }
+}

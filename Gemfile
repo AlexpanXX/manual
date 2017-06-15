@@ -37,6 +37,7 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'font-awesome-rails'
 gem 'material_icons'
+gem 'bootstrap-tagsinput-rails'
 gem 'omniauth-github'
 gem 'figaro'
 
@@ -45,6 +46,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'annotate'
+  gem 'awesome_rails_console'
 end
 
 group :development do
