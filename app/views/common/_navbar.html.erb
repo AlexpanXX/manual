@@ -1,0 +1,43 @@
+<nav class="navbar navbar-info navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <span class="logo"><img src='https://fullstack.xinshengdaxue.com/images/logo.png'/>参赛手册</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to("当前章节", "") %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% unless current_user %>
+          <li><%= link_to fa_icon("user", text: "注册"), new_user_registration_path %></li>
+          <li><%= link_to fa_icon("sign-in", text: "登录"), new_user_session_path %></li>
+        <% else %>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <span class="fa fa-user" aria-hidden="true">
+                <% if current_user.nickname.present? %>
+                  <%= current_user.nickname %>
+                <% else %>
+                  <%= current_user.email %>
+                <% end %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to fa_icon("user-circle-o", text: "个人中心"), users_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to fa_icon("sign-out", text: "退出"), destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

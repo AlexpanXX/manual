@@ -17,6 +17,15 @@
 //= require_tree .
 
 $(document).ready(function() {
-  var changed = false // 是否有变动
+  // 收起通知
+  slideUpAlert();
 
 })
+
+// 收起通知信息
+function slideUpAlert() {
+  // 消息停留2000毫秒（2秒），消失动画时间250毫秒
+  $(".alert").delay(2000).slideUp(250, function() {
+    $(this).remove();
+  });
+}

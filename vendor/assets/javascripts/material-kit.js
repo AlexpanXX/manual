@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   $.material.init();
   window_width = $(window).width();
   $navbar = $('.navbar[color-on-scroll]');

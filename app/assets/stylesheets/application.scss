@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require font-awesome
+ *= require material_icons
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "material-kit";
+ @import "customize";
+ // 固定位置的消息通知
+ .alert-fixed {
+   position: fixed; // 必须有这个属性
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   z-index: 10;
+   border-radius: 0px;
+ }
+
+ .alert-fixed b {
+   font-size: 1em;
+ }
+ // 前端界面通知
+ .my-alert {
+   top: 71px;
+ }
+ // 导航条
+ .navbar-info .navbar-brand {
+  .logo {
+    font-size: 1.3em;
+    img {
+      margin-top: -5px;
+      margin-right: 10px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  color: #FFF;
+}
+ // footer置底代码
+ html {
+   height: 100%;
+   box-sizing: border-box;
+ }
+
+ *,
+ *:after,
+ *:before {
+   box-sizing: inherit;
+ }
+
+ body {
+   margin: 0;
+   position: relative;
+   min-height: 100%;
+   background-color: #deeff5;
+ }
+ // 内容区
+ .my-content {
+   margin: 101px 30px 0;
+   padding-bottom: 60px;
+ }
+ // 内容区带悬浮效果
+ .my-content-raised {
+   margin: 101px 30px 0;
+   padding-bottom: 60px;
+   border-radius: 6px;
+   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+ }
+ // 下拉菜单文字
+ .navbar .navbar-nav > li > a {
+   font-size: 1em;
+   letter-spacing: 1px;
+ }
+ //---------Footer---------
+ footer {
+   position: absolute;
+   width: 100%;
+   bottom: 0;
+   height: 70px;
+   margin-top: -70px;
+   color: #FFF;
+   font-size: 1.2em;
+   padding: 22px 0 20px;
+   background-color: #03a9f4;
+
+   a {
+     color: #FFF;
+   }
+
+   a:hover,
+   a:focus {
+     color: #DDDDD;
+     text-decoration:none;
+   }
+ }
