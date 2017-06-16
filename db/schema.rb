@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20170616030232) do
   create_table "checkpoints", force: :cascade do |t|
     t.integer  "mission_id"
     t.string   "name"
-    t.boolean  "checked",    default: false
     t.boolean  "is_text",    default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
@@ -61,8 +60,10 @@ ActiveRecord::Schema.define(version: 20170616030232) do
   create_table "user_checkpoints", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "checkpoint_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.boolean  "checked",       default: false
+    t.string   "text"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.index ["checkpoint_id"], name: "index_user_checkpoints_on_checkpoint_id"
     t.index ["user_id"], name: "index_user_checkpoints_on_user_id"
   end

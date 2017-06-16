@@ -1,5 +1,7 @@
-<div class="container">
-  <div class="row">
-    <%= render "section_" + params[:section] %>
+<div class="my-content section-list">
+  <div class="container">
+    <div class="row">
+      <%= render partial: "section", collection: @sections, as: :section %>
+    </div>
   </div>
 </div>
