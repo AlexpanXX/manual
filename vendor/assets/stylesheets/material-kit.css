@@ -2526,12 +2526,12 @@ legend {
   position: relative;
 }
 
-.progress {
+/*.progress {
   height: 4px;
   border-radius: 0;
   box-shadow: none;
   background: #DDDDDD;
-}
+}*/
 .progress .progress-bar {
   box-shadow: none;
 }
@@ -2556,7 +2556,7 @@ legend {
 .progress .progress-bar.progress-bar-danger {
   background-color: #f44336;
 }
-.progress.progress-line-primary {
+/*.progress.progress-line-primary {
   background: rgba(156, 39, 176, 0.2);
 }
 .progress.progress-line-info {
@@ -2570,7 +2570,7 @@ legend {
 }
 .progress.progress-line-danger {
   background: rgba(244, 67, 54, 0.2);
-}
+}*/
 
 h1, .h1 {
   font-size: 3.8em;

@@ -16,4 +16,12 @@ class Mission < ApplicationRecord
   has_many :checkpoints, dependent: :destroy
   validates :name, presence: true
   validates :description, presence: true
+
+  def next
+    Mission.where("id > ?", id).first
+  end
+
+  def prev
+    Mission.where("id < ?", id).last
+  end
 end

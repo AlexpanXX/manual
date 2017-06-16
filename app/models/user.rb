@@ -25,14 +25,26 @@ class User < ApplicationRecord
          :rememberable, :trackable, :validatable, :omniauthable
 
   has_many :user_checkpoints
+  has_many :cleared_checkpoints, through: :user_checkpoints, source: :checkpoint
 
   validates :email, presence: true
   validates :password, presence: true
 
   scope :asc, -> { order("created_at ASC") }
-  
+
   def admin?
     is_admin
+  end
+  
+  # 任务是否完成
+  def mission_cleared?(mission)
+    return true if mission.nil?
+    mission.checkpoints_count == cleared_checkpoints.where(mission: mission).count
+  end
+
+  # 是否可以开始任务
+  def can_start_mission?(mission)
+    return mission_cleared?(mission.prev)
   end
 
   # 第三方登录的用户
