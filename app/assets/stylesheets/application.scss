@@ -16,45 +16,51 @@
  *= require bootstrap-tagsinput
  *= require_self
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import "material-kit";
- @import "customize";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "material-kit";
+@import "customize";
 
- .jumbotron {
-   background-image: url("https://ws1.sinaimg.cn/large/006tKfTcly1fg2e1y440tj304g04g0nx.jpg");
-   background-repeat: repeat;
-   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
- }
+.login,
+.signup {
+  background-image: url("https://ws1.sinaimg.cn/large/006tKfTcly1fg2bd499yqj31jk18g7gr.jpg");
+  background-size: cover;
+  background-position: top center;
+}
 
- .card .card-title {
-   font-weight: 400;
-   margin-bottom: 30px;
- }
+.jumbotron {
+  background-image: url("https://ws1.sinaimg.cn/large/006tKfTcly1fg2e1y440tj304g04g0nx.jpg");
+  background-repeat: repeat;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
 
- .progress {
-   margin-bottom: 0;
- }
- // 固定位置的消息通知
- .alert-fixed {
-   position: fixed; // 必须有这个属性
-   top: 0px;
-   left: 0px;
-   width: 100%;
-   z-index: 10;
-   border-radius: 0px;
- }
+.card .card-title {
+  font-weight: 400;
+  margin-bottom: 30px;
+}
 
- .alert-fixed b {
-   font-size: 1em;
- }
- 
- // 前端界面通知
- .my-alert {
-   top: 71px;
- }
- // 导航条
- .navbar-info .navbar-brand {
+.progress {
+  margin-bottom: 0;
+}
+// 固定位置的消息通知
+.alert-fixed {
+  position: fixed; // 必须有这个属性
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  border-radius: 0;
+}
+
+.alert-fixed b {
+  font-size: 1em;
+}
+// 前端界面通知
+.my-alert {
+  top: 71px;
+}
+// 导航条
+.navbar-info .navbar-brand {
   .logo {
     font-weight: 400;
     font-size: 1.4em;
@@ -62,67 +68,71 @@
   color: #FFF;
 }
 // 下拉菜单文字
+
 .navbar .navbar-nav > li > a {
   font-size: 1em;
   letter-spacing: 1px;
 }
 // 链接演示
+
 a {
   font-weight: 400;
   color: #333333;
 }
-a:hover, a:focus {
+
+a:focus,
+a:hover {
   color: #03a9f4;
   text-decoration: none;
 }
- // footer置底代码
- html {
-   height: 100%;
-   box-sizing: border-box;
- }
+// footer置底代码
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
 
- *,
- *:after,
- *:before {
-   box-sizing: inherit;
- }
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
 
- body {
-   margin: 0;
-   position: relative;
-   min-height: 100%;
-   background-color: #deeff5;
- }
- // 内容区
- .my-content {
-   margin: 101px 30px 100px;
- }
- // 内容区带悬浮效果
- .my-content-raised {
-   margin: 101px 30px 100px;
-   border-radius: 6px;
-   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
- }
- //---------Footer---------
- footer {
-   position: absolute;
-   z-index: 2;
-   color: #FFF;
-   width: 100%;
-   bottom: 0;
-   height: 80px;
-   margin-top: -80px;
-   font-size: 1.2em;
-   padding-top: 30px;
-   background-color: #03a9f4;
+body {
+  margin: 0;
+  position: relative;
+  min-height: 100%;
+  background-color: #deeff5;
+}
+// 内容区
+.my-content {
+  margin: 101px 30px 100px;
+}
+// 内容区带悬浮效果
+.my-content-raised {
+  margin: 101px 30px 100px;
+  border-radius: 6px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+//---------Footer---------
+footer {
+  position: absolute;
+  z-index: 2;
+  color: #FFF;
+  width: 100%;
+  bottom: 0;
+  height: 80px;
+  margin-top: -80px;
+  font-size: 1.2em;
+  padding-top: 30px;
+  background-color: #03a9f4;
 
-   a {
-     color: #FFF;
-   }
+  a {
+    color: #FFF;
+  }
 
-   a:hover,
-   a:focus {
-     color: #DDDDD;
-     text-decoration:none;
-   }
- }
+  a:focus,
+  a:hover {
+    color: #DDDDD;
+    text-decoration: none;
+  }
+}
