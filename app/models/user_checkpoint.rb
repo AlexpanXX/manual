@@ -1,16 +1,13 @@
 # == Schema Information
 #
-# Table name: references
+# Table name: user_checkpoints
 #
 #  id            :integer          not null, primary key
+#  user_id       :integer
 #  checkpoint_id :integer
-#  name          :string
-#  url           :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
 
-class Reference < ApplicationRecord
-  validates :name, presence: true
-  validates :url, presence: true
+class UserCheckpoint < ApplicationRecord
 end

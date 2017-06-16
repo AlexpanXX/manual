@@ -10,17 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615065810) do
+ActiveRecord::Schema.define(version: 20170616020804) do
 
   create_table "checkpoints", force: :cascade do |t|
-    t.integer  "section_id"
+    t.integer  "mission_id"
     t.string   "name"
     t.boolean  "checked",    default: false
     t.boolean  "is_text",    default: false
-    t.string   "text"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["section_id"], name: "index_checkpoints_on_section_id"
+    t.index ["mission_id"], name: "index_checkpoints_on_mission_id"
+  end
+
+  create_table "missions", force: :cascade do |t|
+    t.integer  "section_id"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "checkpoints_count", default: 0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["section_id"], name: "index_missions_on_section_id"
   end
 
   create_table "references", force: :cascade do |t|
@@ -34,23 +43,35 @@ ActiveRecord::Schema.define(version: 20170615065810) do
 
   create_table "sections", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "description"
+    t.integer  "missions_count", default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "user_checkpoints", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "checkpoint_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["checkpoint_id"], name: "index_user_checkpoints_on_checkpoint_id"
+    t.index ["user_id"], name: "index_user_checkpoints_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "is_admin",               default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
