@@ -1,0 +1,39 @@
+<div class="my-content-raised main">
+  <div class="container-fluid">
+    <div class="page-header">
+      <h3>章节列表
+        <%= link_to fa_icon("plus", text: "新增"), new_admin_section_path, class: "btn btn-raised btn-success pull-right" %>
+      </h3>
+    </div>
+    <div class="panel panel-default">
+      <table class="table table-shopping">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th width="40%">名称</th>
+            <th>任务</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @sections.each_with_index do |section, index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= section.name %></td>
+            <td>
+              <span class="badge">
+                <%= section.missions_count %>
+              </span>
+            </td>
+            <td>
+              <%= link_to fa_icon("edit"), edit_admin_section_path(section), rel: "tooltip", title: "编辑", class: "btn btn-raised btn-white btn-sm" %>
+              <%= render "common/delete_btn", path: admin_section_path(section), message: "确认删除“#{section.name}”这个章节吗？章节下的所有任务及检查点将被一同删除！" %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%= render "common/delete_confirm" %>

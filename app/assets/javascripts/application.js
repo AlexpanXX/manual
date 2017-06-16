@@ -32,3 +32,12 @@ function slideUpAlert() {
     $(this).remove();
   });
 }
+
+// 确认删除
+function confirmDelete(path, message) {
+  var dialog = $("#confirm-dialog");
+  dialog.find(".btn-confirm").attr("href", path);
+  if (message !== undefined) {
+    dialog.find(".modal-body").html(message);
+  }
+}

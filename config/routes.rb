@@ -3,11 +3,23 @@ Rails.application.routes.draw do
     omniauth_callbacks: "omniauth_callbacks"
   }
 
-  resources :users
-
-  resources :sections do
-    resources :checkpoints
+  namespace :account do
+    resources :missions
   end
+
+  namespace :admin do
+    resources :users
+    resources :sections
+    resources :missions do
+      resources :checkpoints
+    end
+    resources :checkpoints do
+      resources :references
+    end
+  end
+
+  resources :sections
+  resources :missions
 
   root "welcome#index"
 end

@@ -1,0 +1,40 @@
+<div class="my-content-raised main">
+  <div class="container-fluid">
+    <div class="page-header">
+      <h3>
+        <%= @mission.name %>
+        <%= link_to fa_icon("plus", text: "添加检查点"), new_admin_mission_checkpoint_path(@mission), class: "btn btn-raised btn-success pull-right" %>
+      </h3>
+    </div>
+    <ol class="breadcrumb">
+      <li><%= link_to "任务列表", admin_missions_path %></li>
+      <li class="active"><%= @mission.name %></li>
+    </ol>
+    <div class="panel panel-default">
+      <table class="table table-shopping">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>名称</th>
+            <th>引用</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @checkpoints.each_with_index do |checkpoint, index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= checkpoint.name %></td>
+            <td><%= render_reference(checkpoint) %></td>
+            <td>
+              <%= link_to fa_icon("edit"), edit_admin_mission_checkpoint_path(@mission, checkpoint), rel: "tooltip", title: "编辑", class: "btn btn-raised btn-white btn-sm" %>
+              <%= render "common/delete_btn", path: admin_mission_checkpoint_path(@mission, checkpoint), message: "确认删除“#{checkpoint.name}”这个检查点吗？" %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%= render "common/delete_confirm" %>

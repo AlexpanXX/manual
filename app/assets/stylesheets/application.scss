@@ -50,6 +50,15 @@
   font-size: 1em;
   letter-spacing: 1px;
 }
+// 链接演示
+a {
+  font-weight: 400;
+  color: #333333;
+}
+a:hover, a:focus {
+  color: #03a9f4;
+  text-decoration: none;
+}
  // footer置底代码
  html {
    height: 100%;

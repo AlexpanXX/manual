@@ -13,7 +13,7 @@
 
 class Checkpoint < ApplicationRecord
   belongs_to :mission, counter_cache: true
-  has_one :reference
+  has_one :reference, dependent: :destroy
 
   validates :name, presence: true
 end

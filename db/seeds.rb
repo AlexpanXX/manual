@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Section.delete_all
+Missions.delete_all
 Checkpoint.delete_all
 Reference.delete_all
 # 手册章节

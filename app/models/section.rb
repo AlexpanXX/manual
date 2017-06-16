@@ -11,7 +11,7 @@
 #
 
 class Section < ApplicationRecord
-  has_many :checkpoints
+  has_many :missions, dependent: :destroy
 
   validates :name, presence: true
   validates :description, presence: true

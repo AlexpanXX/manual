@@ -1,0 +1,28 @@
+<div class="my-content-raised main">
+  <div class="container-fluid">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <div class="page-header">
+        <h3><%= title %></h3>
+      </div>
+      <% if path == "checkpoints" %>
+        <ol class="breadcrumb">
+          <li><%= link_to "任务列表", admin_missions_path %></li>
+          <li><%= link_to @mission.name, admin_mission_path(@mission) %></li>
+          <li class="active"><%= action_name == "new" ? "添加检查点" : "编辑检查点" %></li>
+        </ol>
+      <% elsif path == "references" %>
+        <ol class="breadcrumb">
+          <li><%= link_to "任务列表", admin_missions_path %></li>
+          <li><%= link_to @checkpoint.mission.name, admin_mission_path(@checkpoint.mission) %></li>
+          <li><%= link_to @checkpoint.name, admin_mission_path(@checkpoint.mission) %></li>
+          <li class="active"><%= action_name == "new" ? "添加引用" : "编辑引用" %></li>
+        </ol>
+      <% end %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%= render "admin/#{path}/form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

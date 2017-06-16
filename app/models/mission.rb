@@ -13,6 +13,7 @@
 
 class Mission < ApplicationRecord
   belongs_to :section, counter_cache: true
+  has_many :checkpoints, dependent: :destroy
   validates :name, presence: true
   validates :description, presence: true
 end

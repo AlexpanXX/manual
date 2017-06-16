@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616020804) do
+ActiveRecord::Schema.define(version: 20170616030232) do
 
   create_table "checkpoints", force: :cascade do |t|
     t.integer  "mission_id"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20170616020804) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["mission_id"], name: "index_checkpoints_on_mission_id"
+  end
+
+  create_table "identifies", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_identifies_on_user_id"
   end
 
   create_table "missions", force: :cascade do |t|
