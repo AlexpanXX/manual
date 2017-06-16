@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="my-content mission-content">
+      <div class="jumbotron">
+        <h1><%= @mission.name %></h1>
+        <p><%= @mission.description %></p>
+      </div>
+      <div class="card">
+        <div class="main main-raised">
+          <div class="card-header card-header-icon" data-background-color="blue">
+            <i class="material-icons">done_all</i>
+          </div>
+          <h4 class="card-title">
+            任务检查
+            <div class="progress">
+              <%= render "progress_bar" %>
+            </div>
+          </h4>
+          <div class="card-content">
+            <ol class="breadcrumb">
+              <li><%= link_to @mission.section.name, section_path(@mission.section) %></li>
+              <li class="active"><%= @mission.name%></li>
+            </ol>
+            <div class="table-responsive">
+              <table class="table table-shopping">
+                <tbody>
+                  <% @checkpoints.each do |checkpoint| %>
+                  <tr>
+                    <td>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" name="check" value="<%= checkpoint.id %>"
+                          <%= render_checkpoint_checked(checkpoint) %>>
+                        </label>
+                      </div>
+                    </td>
+                    <td><%= checkpoint.name %></td>
+                    <% if checkpoint.is_text %>
+                      <td>
+                        <input type="text" name="text" value="<%= render_checkpoint_text(checkpoint) %>">
+                      </td>
+                    <% end %>
+                  </tr>
+                  <%= link_to "check", "", onclick: "checkCheckpoint(#{checkpoint.id})", id: "check-#{checkpoint.id}", class: "invisible" %>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

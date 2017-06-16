@@ -1,3 +1,22 @@
 // Place all the styles related to the missions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mission-content {
+  .card {
+    margin: 0px;
+    padding-bottom: 60px;
+    .card-title {
+      margin-bottom: 15px;
+    }
+  }
+  .progress {
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 20px;
+  }
+  .breadcrumb {
+    margin-bottom: 0;
+  }
+}

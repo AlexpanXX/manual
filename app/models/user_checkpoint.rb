@@ -5,6 +5,8 @@
 #  id            :integer          not null, primary key
 #  user_id       :integer
 #  checkpoint_id :integer
+#  checked       :boolean          default("f")
+#  text          :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #

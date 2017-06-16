@@ -35,7 +35,17 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
-  
+
+  # 是否标记完成
+  def cleared?(checkpoint)
+    cleared_checkpoints.include?(checkpoint) && cleared_checkpoints.find(checkpoint).checked
+  end
+
+  # 检查点文字信息
+  def checkpoint_text(checkpoint)
+    cleared_checkpoints.find(checkpoint).text if cleared_checkpoints.include?(checkpoint)
+  end
+
   # 任务是否完成
   def mission_cleared?(mission)
     return true if mission.nil?

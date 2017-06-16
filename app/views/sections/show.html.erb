@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="my-content">
+    <div class="my-content section-content">
       <div class="jumbotron">
         <h1><%= @section.name %></h1>
         <p><%= @section.description %></p>
@@ -10,19 +10,18 @@
           <div class="card-header card-header-icon" data-background-color="blue">
             <i class="material-icons">view_list</i>
           </div>
-          <h4 class="card-title">章节任务</h4>
-          <div class="cart-content">
-            <div class="card-content">
-              <div class="table-responsive">
-                <table class="table table-shopping">
-                  <tbody>
-                    <% @missions.each do |mission| %>
+          <h4 class="card-title">本章任务</h4>
+          <div class="card-content">
+            <div class="table-responsive">
+              <table class="table table-shopping">
+                <tbody>
+                  <% @missions.each do |mission| %>
                     <tr>
                       <td class="td-name"><%= mission.name %></td>
                       <td class="text-center" width="80%">
                         <div class="progress">
-                          <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                            0%
+                          <div class="progress-bar progress-bar-info progress-bar-striped active" aria-valuenow="0" aria-valuemax="100">
+                            <span class="sr-only">35% Complete (success)</span>
                           </div>
                         </div>
                       </td>
@@ -30,10 +29,9 @@
                         <%= render_mission_start_btn(mission) %>
                       </td>
                     </tr>
-                    <% end %>
-                  </tbody>
-                </table>
-              </div>
+                  <% end %>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
